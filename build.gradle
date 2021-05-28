@@ -1,0 +1,41 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'scala'
+    id 'idea'
+}
+
+group 'org.masood'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '11'
+compileScala.targetCompatibility = 11
+def scalaVersion = '2.12'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.scala-lang:scala-library:${scalaVersion}.10"
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "org.springframework.boot:spring-boot-configuration-processor"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "org.scalatest:scalatest_${scalaVersion}:3.2.3"
+    testImplementation group: 'org.scalatest', name: "scalatest-mustmatchers_${scalaVersion}", version: '3.2.3'
+    testImplementation "org.scalatestplus:junit-4-12_${scalaVersion}:3.2.2.0"
+    testRuntimeOnly "org.scala-lang.modules:scala-xml_${scalaVersion}:1.2.0"
+}
+
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala']
+        }
+    }
+    test {
+        scala {
+            srcDirs = ['src/test/scala']
+        }
+    }
+}
