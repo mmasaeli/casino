@@ -1,5 +1,6 @@
 package org.masood.game.casino.api
 
+import org.masood.game.casino.domain.Card
 import org.masood.game.casino.services.CardService
 import org.springframework.web.bind.annotation.{GetMapping, RequestMapping, RestController}
 
@@ -8,6 +9,6 @@ import org.springframework.web.bind.annotation.{GetMapping, RequestMapping, Rest
 class CardApi(cardService: CardService) {
 
   @GetMapping(path = Array("/deck"))
-  def deck() = cardService.shuffle()
+  def deck(): Array[Card] = cardService.shuffle()
 
 }

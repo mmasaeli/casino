@@ -18,6 +18,7 @@ class CardServiceTest extends AnyFunSuite {
     deck should have size 52
     deck.head shouldBe new Card(CardKinds.SPADE, CardNumbers.THREE)
     deck(1) shouldBe new Card(CardKinds.HEART, CardNumbers.SEVEN)
+    deck.map(_.value()).reduce(_ + _) shouldBe 364
   }
 
 }
