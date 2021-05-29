@@ -3,6 +3,7 @@ package org.masood.game.casino.domain;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.masood.game.casino.domain.enums.CardKinds;
 import org.masood.game.casino.domain.enums.CardNumbers;
@@ -14,9 +15,10 @@ import java.util.Map;
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode
+@NoArgsConstructor
 public class Card implements Serializable {
-    private final CardKinds kind;
-    private final CardNumbers number;
+    private CardKinds kind;
+    private CardNumbers number;
 
     public Integer value() {
         return value(new HashMap<CardNumbers, Integer>());

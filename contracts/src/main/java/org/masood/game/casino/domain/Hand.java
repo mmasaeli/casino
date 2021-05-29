@@ -12,11 +12,11 @@ import java.util.Set;
 public class Hand implements Serializable {
     protected Set<Card> cards = new HashSet<>();
 
-    boolean put(Card card) {
+    public boolean put(Card card) {
         return cards.add(card);
     }
 
-    boolean put(Collection<Card> cs) {
+    public boolean put(Collection<Card> cs) {
         return cards.addAll(cs);
     }
 
@@ -24,7 +24,7 @@ public class Hand implements Serializable {
         return cards.remove(card);
     }
 
-    Integer value() {
+    public Integer value() {
         return cards.stream().mapToInt(Card::value).sum();
     }
 }
