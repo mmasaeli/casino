@@ -21,7 +21,5 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation "org.scalatest:scalatest_${scalaVersion}:3.2.3"
-    testImplementation group: 'org.scalatest', name: "scalatest-mustmatchers_${scalaVersion}", version: '3.2.3'
     testImplementation "org.scalatestplus:junit-4-12_${scalaVersion}:3.2.2.0"
-    testRuntimeOnly "org.scala-lang.modules:scala-xml_${scalaVersion}:1.2.0"
 }
