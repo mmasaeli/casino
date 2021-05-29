@@ -15,7 +15,7 @@ class CardApiTest {
 
   import org.springframework.beans.factory.annotation.Autowired
 
-  @Autowired private var mvc: MockMvc = null
+  @Autowired private var mvc: MockMvc = _
 
   @Test
   def cardsDeck() {

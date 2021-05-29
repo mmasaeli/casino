@@ -7,13 +7,14 @@ import org.jetbrains.annotations.NotNull;
 import org.masood.game.casino.domain.enums.CardKinds;
 import org.masood.game.casino.domain.enums.CardNumbers;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Card {
+public class Card implements Serializable {
     private final CardKinds kind;
     private final CardNumbers number;
 
