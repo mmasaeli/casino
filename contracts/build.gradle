@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "6.0.0-m2"
+    id 'maven-publish'
+}
+
+group 'org.masood.game.casino'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    enabled = true
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+    publications {
+        maven(MavenPublication) {
+            artifactId = 'casino-contracts'
+
+            from components.java
+        }
+    }
+}

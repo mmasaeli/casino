@@ -1,10 +1,10 @@
 package org.masood.game.casino.domain;
 
+import org.masood.game.casino.domain.enums.CardKinds;
+import org.masood.game.casino.domain.enums.CardNumbers;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import org.masood.game.casino.domain.enums.CardKinds;
-import org.masood.game.casino.domain.enums.CardNumbers;
 
 @Getter
 @AllArgsConstructor
