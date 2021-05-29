@@ -1,6 +1,7 @@
 package org.masood.game.casino.services
 
-import org.masood.game.casino.domain.{Card, CardKinds, CardNumbers}
+import org.masood.game.casino.domain.Card
+import org.masood.game.casino.domain.enums.{CardKinds, CardNumbers}
 import org.springframework.stereotype.Service
 
 import scala.util.Random
@@ -12,9 +13,7 @@ class CardService() {
       case Some(s) => new Random(s)
       case _ => new Random
     }
-    set().sortWith { (_, _) =>
-      rand.nextBoolean()
-    }
+    set().map((_, rand.nextInt())).sortWith((a, b) => a._2 < b._2).map(_._1)
   }
 
   private def set(): Array[Card] = {
@@ -23,7 +22,7 @@ class CardService() {
         (kind, _)
       }
     }.map { cardInfo =>
-      Card(cardInfo._1, cardInfo._2)
+      new Card(cardInfo._1, cardInfo._2)
     }
   }
 

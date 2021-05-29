@@ -1,4 +1,4 @@
-package org.masood.game.casino.domain;
+package org.masood.game.casino.domain.enums;
 
 public enum CardNumbers {
     ACE,
