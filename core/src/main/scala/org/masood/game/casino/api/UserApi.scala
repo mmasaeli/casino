@@ -11,6 +11,9 @@ class UserApi(userService: UserService) {
   @PostMapping
   def createUser(@RequestBody user: User): User = userService.createUser(user)
 
+  @PutMapping
+  def updateUser(@RequestBody user: User): User = userService.createUser(user)
+
   @GetMapping(path = Array("/{userId}"))
   def getUser(@PathVariable userId: String): User = userService.getUser(userId)
 
