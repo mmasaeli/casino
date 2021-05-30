@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 import scala.util.Random
 
 @Service
-class CardService() {
+class CardService {
   def shuffle(seed: Option[Int] = null): Array[Card] = {
     val rand = seed match {
       case Some(s) => new Random(s)

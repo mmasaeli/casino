@@ -1,15 +1,12 @@
 package org.masood.game.casino.api
 
-import org.masood.game.casino.domain.{Card, Game}
-import org.masood.game.casino.services.{CardService, GameService}
+import org.masood.game.casino.domain.Game
+import org.masood.game.casino.services.GameService
 import org.springframework.web.bind.annotation._
 
 @RestController
 @RequestMapping(path = Array("/game"))
-class GameApi(cardService: CardService, gameService: GameService) {
-
-  @GetMapping(path = Array("/new-deck"))
-  def deck: Array[Card] = cardService.shuffle()
+class GameApi(gameService: GameService) {
 
   @PostMapping
   def newGame: Game = gameService.createGame()
