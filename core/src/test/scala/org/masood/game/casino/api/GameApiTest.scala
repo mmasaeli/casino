@@ -10,8 +10,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 
 @RunWith(classOf[SpringRunner])
-@WebMvcTest(Array(classOf[CardApi], classOf[CardService]))
-class CardApiTest {
+@WebMvcTest(Array(classOf[GameApi], classOf[CardService]))
+class GameApiTest {
 
   import org.springframework.beans.factory.annotation.Autowired
 

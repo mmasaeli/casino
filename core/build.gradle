@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.5.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'scala'
+    id "io.freefair.lombok" version "6.0.0-m2"
 }
 
 group 'org.masood.game.casino'
@@ -18,8 +19,24 @@ dependencies {
     implementation "org.scala-lang:scala-library:${scalaVersion}.10"
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation project(':contracts')
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.mariadb.jdbc:mariadb-java-client:2.1.2")
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation "org.scalatest:scalatest_${scalaVersion}:3.2.3"
     testImplementation "org.scalatestplus:junit-4-12_${scalaVersion}:3.2.2.0"
+}
+
+
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala']
+        }
+    }
+    test {
+        scala {
+            srcDirs = ['src/test/scala']
+        }
+    }
 }
