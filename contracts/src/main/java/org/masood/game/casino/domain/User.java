@@ -1,6 +1,7 @@
 package org.masood.game.casino.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.masood.game.casino.domain.enums.UserType;
 
 import java.io.Serializable;
@@ -13,5 +14,6 @@ public class User implements Serializable {
     protected String name;
     protected UserType userType = UserType.PLAYER;
     protected int balance = 0;
+    @EqualsAndHashCode.Exclude
     protected Set<Game> games = new HashSet<>();
 }

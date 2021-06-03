@@ -1,9 +1,7 @@
 package org.masood.game.casino.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.masood.game.casino.domain.Game;
 import org.masood.game.casino.domain.enums.GameStatus;
 
