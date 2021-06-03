@@ -1,3 +1,7 @@
 plugins {
     id 'idea'
 }
+
+tasks.register("image-build", Exec.class) {
+    commandLine("docker", "build", "-t", "masood_casino", ".")
+}
